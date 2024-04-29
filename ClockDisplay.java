@@ -70,12 +70,21 @@ public class ClockDisplay
      */
     public String getTime()
     {
-        if (NumberDisplay.hours > 12)
+        if (hours.getValue() < 13)
         {
-        return NumberDisplay
+            displayString = hours.getDisplayValue() + ":" + 
+            minutes.getDisplayValue() +"a.m";
+        }    
+            else
+            {      
+            return displayString = (hours.getValue() -12 ) + ":" 
+            + minutes.getDisplayValue() +"p.m";
+        
+            }
+        return displayString;
+    
+    }       
 
-        }        //return displayString;
-    }
     
     /**
      * Update the internal string that represents the display.
